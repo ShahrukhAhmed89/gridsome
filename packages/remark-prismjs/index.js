@@ -34,6 +34,10 @@ function highlight ({ value, lang }, tag = 'pre') {
     lang = 'text'
     code = escapeHtml(code)
   }
+  
+  if (tag === "pre"){
+    return `<${tag} class="language-${lang}"><code class="language-${lang}">${code}</code></${tag}>`
+  }
 
   return `<${tag} class="language-${lang}">${code}</${tag}>`
 }
